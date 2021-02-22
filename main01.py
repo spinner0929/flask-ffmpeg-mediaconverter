@@ -45,7 +45,7 @@ def upload():
 				dfile = '{}.{}'.format(os.path.splitext(filename)[0], str(format)) # Build file name
 				inputF = os.path.join(app.config['UPLOAD_FOLDER'], filename) # Build input path
 				outputF = os.path.join(app.config['DOWNLOAD_FOLDER'], dfile) # Build output path and add file
-				convertCMD = [FFMPEG_BIN, '-y', '-i', '-ac', '1', '-ar', '44100', '-acodec', 'pcm_s16le', inputF, outputF] # Ffmpeg is flexible enough to handle wildstar conversions
+				convertCMD = [FFMPEG_BIN, '-y', '-i', inputF, '-ac', '1', '-ar', '44100', '-acodec', 'pcm_s16le', outputF] # Ffmpeg is flexible enough to handle wildstar conversions
 
 				executeOrder66 = subprocess.Popen(convertCMD)
 
