@@ -7,7 +7,7 @@
     {% block content %}
 
     <div class="home">
-        <h1>音楽アプリ nana 音源変換ツール</h1>
+        <h1>音楽アプリ nana アップロード用変換ツール</h1>
         <p>① nana にアップロードしたいファイル(音源)を選んでください。</p>
 
     <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
@@ -35,6 +35,10 @@
             <input type="submit" value="変換">
         </div>
     </form>
+    <div>
+        <p>作った人 → <a href="https://twitter.com/nagagutsu_af">フクナガ</a></p>
+        <p>nana → <a href="https://nana-music.com/users/262116">フクナガ</a></p>
+    </div>
     </div>
     <script type="text/javascript" src="{{ url_for('static', filename='js.js') }}"></script>
     {% endblock %}
