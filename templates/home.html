@@ -8,7 +8,7 @@
 
     <div class="home">
         <h1>nana用音源変換ツール</h1>
-        <p>nanaにアップロードしたいファイル(音源)を選んでください。</p>
+        <p>① nana にアップロードしたいファイル(音源)を選んでください。</p>
 
     <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
         <div>
@@ -25,14 +25,14 @@
             <p id=>ファイルが選択されていません。</p>
         </div>
         <div>
+            <p>②切り取る範囲を「時間:分:秒」で入力してください。</p>
+        </div>
+        <div>
             <label for="start">開始時間：</label>
             <input type="text" id="start" name="start" value="00:00:00" size="8" maxlength="8">
             <label for="over">～ 終了時間：</label>
             <input type="text" id="over" name="over" value="00:00:00" size="8" maxlength="8">
             <input type="submit" value="変換">
-        </div>
-        <div>
-            <p>※トリミングは「時間:分:秒」で入力してください。</p>
         </div>
     </form>
     </div>
