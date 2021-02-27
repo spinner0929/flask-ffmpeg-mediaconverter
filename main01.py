@@ -6,8 +6,8 @@ import subprocess
 FFMPEG_BIN = "ffmpeg.exe"
 
 # Statics
-UPLOAD_FOLDER = 'files\\uploaded'
-DOWNLOAD_FOLDER = 'files\\download'
+UPLOAD_FOLDER = '../files/uploaded'
+DOWNLOAD_FOLDER = '../files/download'
 ALLOWED_EXTENSIONS = set(['mp3', 'wav', 'ogg', 'flac'])
 
 app = Flask(__name__)
