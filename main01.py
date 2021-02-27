@@ -6,13 +6,14 @@ import subprocess
 FFMPEG_BIN = "ffmpeg.exe"
 
 # Statics
-UPLOAD_FOLDER = '../files/uploaded'
-DOWNLOAD_FOLDER = '../files/download'
+UPLOAD_FOLDER = '/files/uploaded'
+DOWNLOAD_FOLDER = '/files/download'
+PHISICAL_ROOT = os.path.dirname( os.path.abspath( __file__ ) )
 ALLOWED_EXTENSIONS = set(['mp3', 'wav', 'ogg', 'flac'])
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['DOWNLOAD_FOLDER'] = DOWNLOAD_FOLDER
+app.config['UPLOAD_FOLDER'] = PHISICAL_ROOT + UPLOAD_FOLDER
+app.config['DOWNLOAD_FOLDER'] = PHISICAL_ROOT + DOWNLOAD_FOLDER
 
 def allowed_file(filename):
 	# Build the filename + extension after checking if allowed
