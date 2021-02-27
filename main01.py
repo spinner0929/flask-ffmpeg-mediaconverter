@@ -3,7 +3,7 @@ from werkzeug.utils import secure_filename
 import os
 import subprocess
 
-FFMPEG_BIN = "ffmpeg.exe"
+FFMPEG_BIN = "ffmpeg"
 
 # Statics
 UPLOAD_FOLDER = '/files/uploaded'
