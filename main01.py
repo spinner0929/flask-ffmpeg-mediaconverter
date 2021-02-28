@@ -9,7 +9,9 @@ FFMPEG_BIN = "ffmpeg"
 UPLOAD_FOLDER = '/files/uploaded'
 DOWNLOAD_FOLDER = '/files/download'
 PHISICAL_ROOT = os.path.dirname( os.path.abspath( __file__ ) )
-ALLOWED_EXTENSIONS = set(['mp3', 'wav', 'ogg', 'flac', 'm4a'])
+ALLOWED_EXTENSIONS = set(['mp3', 'wma', 'wav', '3gp', '3g2', 'aiff',\
+                          'ogg', 'oga', 'flac', 'mov', 'alac', 'm4a',\
+						  'mp4', 'aif'])
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = PHISICAL_ROOT + UPLOAD_FOLDER
