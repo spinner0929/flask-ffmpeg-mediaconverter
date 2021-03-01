@@ -41,7 +41,7 @@ def upload():
 			# Server-side check to prevent client-side value manipulation
 			format = "wav"
 			start = request.form.get("start")
-			over = request.form.get("over")
+			end = request.form.get("end")
 			if str(format) in ALLOWED_EXTENSIONS:
 				filename = secure_filename(file.filename)
 				file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
@@ -50,7 +50,7 @@ def upload():
 				dfile = '{}.{}'.format(os.path.splitext(filename)[0], str(format)) # Build file name
 				inputF = os.path.join(app.config['UPLOAD_FOLDER'], filename) # Build input path
 				outputF = os.path.join(app.config['DOWNLOAD_FOLDER'], dfile) # Build output path and add file
-				convertCMD = [FFMPEG_BIN, '-y', '-i', inputF, '-ss', str(start), '-to', str(over), '-ac', '1', '-ar', '44100', '-acodec', 'pcm_s16le', outputF]
+				convertCMD = [FFMPEG_BIN, '-y', '-i', inputF, '-ss', str(start), '-to', str(end), '-ac', '1', '-ar', '44100', '-acodec', 'pcm_s16le', outputF]
 
 				executeOrder66 = subprocess.Popen(convertCMD)
 
