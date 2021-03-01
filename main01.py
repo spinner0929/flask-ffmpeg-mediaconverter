@@ -50,7 +50,8 @@ def upload():
 				dfile = '{}.{}'.format(os.path.splitext(filename)[0], str(format)) # Build file name
 				inputF = os.path.join(app.config['UPLOAD_FOLDER'], filename) # Build input path
 				outputF = os.path.join(app.config['DOWNLOAD_FOLDER'], dfile) # Build output path and add file
-				convertCMD = [FFMPEG_BIN, '-y', '-i', inputF, '-ss', str(start), '-to', str(end), '-ac', '1', '-ar', '44100', '-acodec', 'pcm_s16le', outputF]
+				convertCMD = [FFMPEG_BIN, '-y', '-i', inputF, '-ss', str(start), '-to', str(end), \
+                              '-ac', '1', '-ar', '44100', '-acodec', 'pcm_s16le', outputF]
 
 				executeOrder66 = subprocess.Popen(convertCMD)
 
